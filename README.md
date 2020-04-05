@@ -1,4 +1,4 @@
-Currency Exchange API
+Currency Converter API
 
 1) git clone https://github.com/dodep/python-server.git
 2) cd python-server
