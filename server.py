@@ -62,7 +62,10 @@ class CurrencyExServer:
         request_URI_match = pattern.match(request_URI)
         if not request_URI_match:
             return self.server_response_func(400, {'error':'wrong query string'}, client_socket)
-            
+        print('URI')
+        print(request_URI)
+        print('match')
+        print(request_URI_match)
         return True
 
     def serve_connection(self, client_socket):
