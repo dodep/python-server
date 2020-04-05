@@ -58,14 +58,10 @@ class CurrencyExServer:
             return self.server_response_func(400, {'error':'currency must be USD, EUR or RUB'}, client_socket)
 
         # check whole URI:
-        pattern = re.compile(r'/\?currency_amount=\d+&currency_from=(USD|RUB|EUR)&currency_to=(USD|RUB|EUR)')
+        pattern = re.compile(r'^/\?currency_amount=\d+&currency_from=(USD|RUB|EUR)&currency_to=(USD|RUB|EUR)$')
         request_URI_match = pattern.match(request_URI)
         if not request_URI_match:
             return self.server_response_func(400, {'error':'wrong query string'}, client_socket)
-        print('URI')
-        print(request_URI)
-        print('match')
-        print(request_URI_match)
         return True
 
     def serve_connection(self, client_socket):
